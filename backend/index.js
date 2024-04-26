@@ -26,6 +26,13 @@ mongoose
 
 app.use('/', Routes);
 
+app.get('/', async (req, res) => {
+    res.status(200).json({
+        messsage: 'Connect',
+        
+    });
+});
+
 app.listen(PORT, () => {
     console.log(`Server started at port no. ${PORT}`)
 })
