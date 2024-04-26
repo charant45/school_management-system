@@ -35,6 +35,9 @@ const studentRegister = async (req, res) => {
 
 const studentLogIn = async (req, res) => {
     try {
+        res.status(200).json({
+            messsage: 'Student',  
+        });
         let student = await Student.findOne({ rollNum: req.body.rollNum, name: req.body.studentName });
         if (student) {
             const validated = await bcrypt.compare(req.body.password, student.password);
